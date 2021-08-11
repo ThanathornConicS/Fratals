@@ -1,22 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
+    <ClCompile Include="src\Utilities\pch.cpp">
+      <Filter>Resource Files\pch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\Log.cpp">
+      <Filter>Resource Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fractals_main.cpp">
+      <Filter>Fractals</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\Shader.cpp">
+      <Filter>Resource Files\Shader</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+      <UniqueIdentifier>{5aeb8d69-5644-4f19-9a0e-608e8326d2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\pch">
+      <UniqueIdentifier>{4fdd4a63-986a-4b3b-8e82-3c2232956b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Log">
+      <UniqueIdentifier>{700df2cb-110e-41d7-acfd-0f4dcfb077c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fractals">
+      <UniqueIdentifier>{675b9493-441d-4aab-9d89-f1bd35a8881f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Shader">
+      <UniqueIdentifier>{f351188e-6ca7-4f0d-a73d-3c621f7a5bee}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Fractals.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="src\Utilities\pch.h">
+      <Filter>Resource Files\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Log.h">
+      <Filter>Resource Files\Log</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\Shader.h">
+      <Filter>Resource Files\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MiscFunction.h">
+      <Filter>Fractals</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
