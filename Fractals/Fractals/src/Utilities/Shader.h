@@ -10,9 +10,10 @@ class Shader
 {
 public:
     unsigned int program_ID;
-    Shader(const char* vertex_shader_path, const char* fragment_shader_path);
+    Shader(void);
     ~Shader();
 
+    void Create_Program(const char* vertex_shader_path, const char* fragment_shader_path);
     void use_shader();
 
     void set_float(const std::string& name, float value) const;

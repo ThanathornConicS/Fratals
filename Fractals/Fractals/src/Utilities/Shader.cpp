@@ -1,7 +1,18 @@
 #include "pch.h"
 #include "Shader.h"
 
-Shader::Shader(const char* vertex_shader_path, const char* fragment_shader_path)
+Shader::Shader()
+{}
+Shader::~Shader()
+{
+    if (program_ID != 0)
+    {
+        glDeleteProgram(program_ID);
+        program_ID = 0;
+    }
+}
+
+void Shader::Create_Program(const char* vertex_shader_path, const char* fragment_shader_path)
 {
     program_ID = glCreateProgram();
 
@@ -17,15 +28,6 @@ Shader::Shader(const char* vertex_shader_path, const char* fragment_shader_path)
     {
         glGetProgramInfoLog(program_ID, 512, nullptr, error_message);
         std::cout << "Error linking shader program: " << error_message << "\n";
-    }
-}
-
-Shader::~Shader()
-{
-    if (program_ID != 0)
-    {
-        glDeleteProgram(program_ID);
-        program_ID = 0;
     }
 }
 

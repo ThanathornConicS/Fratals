@@ -147,16 +147,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="src\Fractals_main.cpp" />
-    <ClCompile Include="src\Utilities\Log.cpp" />
-    <ClCompile Include="src\Utilities\pch.cpp" />
     <ClCompile Include="src\Utilities\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\MiscFunction.h" />
-    <ClInclude Include="src\Utilities\Log.h" />
-    <ClInclude Include="src\Utilities\pch.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="src\Utilities\Shader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Utilities\Shader_frag.frag" />
+    <None Include="src\Utilities\Shader_vert.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

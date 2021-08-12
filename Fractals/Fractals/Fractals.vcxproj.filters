@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\Utilities\pch.cpp">
-      <Filter>Resource Files\pch</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Utilities\Log.cpp">
-      <Filter>Resource Files\Log</Filter>
-    </ClCompile>
     <ClCompile Include="src\Fractals_main.cpp">
       <Filter>Fractals</Filter>
     </ClCompile>
     <ClCompile Include="src\Utilities\Shader.cpp">
       <Filter>Resource Files\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Resource Files\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Resource Files\pch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Fractals\Engine_System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -30,19 +33,30 @@
     <Filter Include="Resource Files\Shader">
       <UniqueIdentifier>{f351188e-6ca7-4f0d-a73d-3c621f7a5bee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fractals\Engine_System">
+      <UniqueIdentifier>{ff771e5c-7ac9-42cd-9c3c-b9ae772206a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Utilities\pch.h">
-      <Filter>Resource Files\pch</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Utilities\Log.h">
-      <Filter>Resource Files\Log</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utilities\Shader.h">
       <Filter>Resource Files\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="src\MiscFunction.h">
-      <Filter>Fractals</Filter>
+    <ClInclude Include="Log.h">
+      <Filter>Resource Files\Log</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Resource Files\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine.h">
+      <Filter>Fractals\Engine_System</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Utilities\Shader_frag.frag">
+      <Filter>Resource Files\Shader</Filter>
+    </None>
+    <None Include="src\Utilities\Shader_vert.vert">
+      <Filter>Resource Files\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

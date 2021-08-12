@@ -15,7 +15,7 @@
 
 #include <vector>
 
-//#include "Log.h"
+#include "Log.h"
 
 #define _CRTDBG_MAP_ALLOC //to get more details
 #define PI 2 * acos(0.0f)
