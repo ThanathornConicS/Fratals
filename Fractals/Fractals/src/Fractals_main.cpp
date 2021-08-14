@@ -17,12 +17,18 @@ int main(int argc, char* argv[])
     _CrtMemState sDiff;
     _CrtMemCheckpoint(&sOld); //take a snapchot
 
+    bool isInitialized = true;
+
     Engine* engine = &Engine::GetInstance();
 
     Log::Log::Init();
     L_SYSTEM_INFO("Initializing Log");
 
-    engine->Init();
+    if (engine->Init() == -1) 
+    {
+        L_SYSTEM_ERROR("Error has occured when initialize the engine");
+        isInitialized = false;
+    }
 
     glfwSetTime(0);
 
@@ -34,7 +40,9 @@ int main(int argc, char* argv[])
         engine->Draw();
         engine->Update();
 
-    } while (glfwGetKey(engine->GetGLWindow(), GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(engine->GetGLWindow()) == 0);
+    } while (glfwGetKey(engine->GetGLWindow(), GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(engine->GetGLWindow()) == 0 && isInitialized);
+
+    delete engine;
 
     _CrtMemCheckpoint(&sNew); //take a snapshot 
     if (_CrtMemDifference(&sDiff, &sOld, &sNew)) // if there is a difference

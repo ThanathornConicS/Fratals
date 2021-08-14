@@ -2,13 +2,17 @@
 in vec4 gl_FragCoord;
  
 out vec4 frag_color;
+
+uniform float zoom;
+uniform float center_x;
+uniform float center_y;
  
-#define MAX_ITERATIONS 1000
+#define MAX_ITERATIONS 500
  
 int get_iterations()
 {
-    float real = ((gl_FragCoord.x / 1080.0 - 0.5) * 0.5 ) * 5.0;
-    float imag = ((gl_FragCoord.y / 1080.0 - 0.5) * 0.5 ) * 5.0;
+    float real = ((gl_FragCoord.x / 1080.0 - 0.5) * (1 + zoom) + center_x) * 5.0;
+    float imag = ((gl_FragCoord.y / 1080.0 - 0.5) * (1 + zoom) + center_y) * 5.0;
  
     int iterations = 0;
     float const_real = real;
@@ -36,11 +40,11 @@ vec4 return_color()
     if (iter == MAX_ITERATIONS)
     {
         gl_FragDepth = 0.0f;
-        return vec4(0.0f, 0.0f, 0.0f, 1.0f);
+        return vec4(0.1f, 0.0f, 0.1f, 0.5f);
     }
  
     float iterations = float(iter) / MAX_ITERATIONS;    
-    return vec4(iterations, 0.0f, iterations, 1.0f);
+    return vec4(iterations, 0.0f, iterations, 1.0f - iterations);
 }
  
 void main()

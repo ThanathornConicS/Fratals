@@ -2,6 +2,7 @@
 #include "Shader.h"
 
 Shader::Shader()
+    :program_ID(0)
 {}
 Shader::~Shader()
 {
@@ -27,7 +28,8 @@ void Shader::Create_Program(const char* vertex_shader_path, const char* fragment
     if (!success)
     {
         glGetProgramInfoLog(program_ID, 512, nullptr, error_message);
-        std::cout << "Error linking shader program: " << error_message << "\n";
+        L_SYSTEM_ERROR("Error linking shader program: {0}", error_message);
+        isSuccess = false;
     }
 }
 
@@ -80,8 +82,9 @@ void Shader::add_shader(unsigned int program, const char* shader_path, GLenum sh
     if (!success)
     {
         glGetShaderInfoLog(shader, 512, nullptr, error_message);
-        std::cout << "Error compiling shader: " << error_message << "\n";
-        std::cout << "Shader location: " << shader_path << "\n";
+        L_SYSTEM_ERROR("Error compiling shader: {0}", error_message);
+        L_SYSTEM_ERROR("Shader location: {0}", shader_path);
+        isSuccess = false;
     }
 
     glAttachShader(program, shader);
@@ -91,7 +94,6 @@ void Shader::set_float(const std::string& name, float value) const
 {
     glUniform1f(glGetUniformLocation(program_ID, name.c_str()), value);
 }
-
 
 void Shader::set_vec4(const std::string& name, glm::vec4 vec) const
 {

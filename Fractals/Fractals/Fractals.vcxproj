@@ -152,12 +152,15 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="src\Fractals_main.cpp" />
     <ClCompile Include="src\Utilities\Shader.cpp" />
+    <ClCompile Include="src\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="src\Input.h" />
     <ClInclude Include="src\Utilities\Shader.h" />
+    <ClInclude Include="src\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Utilities\Shader_frag.frag" />

@@ -16,6 +16,9 @@
     <ClCompile Include="src\Engine.cpp">
       <Filter>Fractals\Engine_System</Filter>
     </ClCompile>
+    <ClCompile Include="src\WindowsInput.cpp">
+      <Filter>Fractals\Input_System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resource Files">
@@ -36,6 +39,9 @@
     <Filter Include="Fractals\Engine_System">
       <UniqueIdentifier>{ff771e5c-7ac9-42cd-9c3c-b9ae772206a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fractals\Input_System">
+      <UniqueIdentifier>{a5154832-ab1c-4629-bc11-24213de944f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Utilities\Shader.h">
@@ -49,6 +55,12 @@
     </ClInclude>
     <ClInclude Include="src\Engine.h">
       <Filter>Fractals\Engine_System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input.h">
+      <Filter>Fractals\Input_System</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WindowsInput.h">
+      <Filter>Fractals\Input_System</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

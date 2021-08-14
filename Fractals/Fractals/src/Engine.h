@@ -4,6 +4,7 @@
 #include <GLFW\glfw3.h>
 
 #include "Utilities/Shader.h"
+#include "WindowsInput.h"
 
 struct Time 
 {
@@ -29,9 +30,21 @@ struct Time
 	}
 };
 
+struct UniformLocation 
+{
+	int gl_zoomfactor = -1;
+	int gl_centerX = -1;
+	int gl_centerY = -1;
+
+	inline void FindUniformLocation(uint32_t progID, const char* u_name, int& value) 
+	{
+		value = glGetUniformLocation(progID, u_name);
+	}
+};
+
 class Engine
 {
-public:
+public:		//Functions
 	inline static Engine& GetInstance() 
 	{
 		if (!s_instance)
@@ -60,15 +73,24 @@ public:
 
 	GLFWwindow* GetGLWindow() const;
 
+	inline uint32_t GetShaderProgID() const 
+	{
+		return m_shader.program_ID;
+	}
+
+public:		//Variables
+	UniformLocation m_uniformL;
+
 protected:	
 	Engine();
 
-private:	//Variable
+private:	//Variables
 	static Engine* s_instance;
 	Time m_time;
 	GLFWwindow* m_window = nullptr;
 
 	Shader m_shader;
+	WindowsInput m_input;
 
 	const char* m_name;
 	int m_width, m_height;

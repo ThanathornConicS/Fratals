@@ -9,7 +9,7 @@
 class Shader
 {
 public:
-    unsigned int program_ID;
+    uint32_t program_ID;
     Shader(void);
     ~Shader();
 
@@ -19,7 +19,13 @@ public:
     void set_float(const std::string& name, float value) const;
     void set_vec4(const std::string& name, glm::vec4 vec) const;
 
+    inline bool IsSuccess() const 
+    {
+        return isSuccess;
+    }
+
 private:
+    bool isSuccess = true;
     std::string read_shader_file(const char* file_path);
     void add_shader(unsigned int program, const char* shader_path, GLenum shader_type);
 };
